@@ -176,6 +176,10 @@ App_Data/*.ldf
 ## Windows detritus
 #############
 
+# Github crap
+.gitignore
+.gitattributes
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
