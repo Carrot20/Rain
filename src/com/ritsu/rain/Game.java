@@ -11,6 +11,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
 import com.ritsu.rain.graphics.Screen;
+import com.ritsu.rain.input.Keyboard;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -22,6 +23,7 @@ public class Game extends Canvas implements Runnable {
 
 	private Thread thread;
 	private JFrame frame;
+	private Keyboard key;
 	private boolean running = false;
 
 	private Screen screen;
@@ -34,8 +36,10 @@ public class Game extends Canvas implements Runnable {
 		setPreferredSize(size);
 
 		screen = new Screen(width, height);
-
 		frame = new JFrame();
+		key = new Keyboard();
+		
+		addKeyListener(key);
 	}
 
 	public synchronized void start() {
@@ -86,8 +90,9 @@ public class Game extends Canvas implements Runnable {
 	int x = 0, y = 0;
 
 	public void update() {
+		key.update();
 		x++;
-		//y++;
+		y++;
 	}
 
 	public void render() {
