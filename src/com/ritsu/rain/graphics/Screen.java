@@ -4,7 +4,7 @@ public class Screen {
 
 	private int width, height;
 	public int[] pixels;
-	
+
 	int xtime = 100, ytime = 50;
 	int counter = 0;
 
@@ -13,14 +13,12 @@ public class Screen {
 		this.height = height;
 		pixels = new int[width * height];
 	}
-	
+
 	public void clear() {
 		for (int i = 0; i < pixels.length; i++) {
 			pixels[i] = 0;
 		}
 	}
-	
-	
 
 	public void render() {
 		counter++;
