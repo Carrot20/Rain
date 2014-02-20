@@ -18,7 +18,7 @@ public abstract class Entity {
 	public void render(Screen screen){
 	}
 	
-	public void remvoe(){
+	public void remove(){
 		//Remove from level
 		removed=true;
 	}
