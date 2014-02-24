@@ -15,7 +15,7 @@ import com.ritsu.rain.entity.mob.Player;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.input.Keyboard;
 import com.ritsu.rain.level.Level;
-import com.ritsu.rain.level.RandomLevel;
+import com.ritsu.rain.level.SpawnLevel;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -44,7 +44,7 @@ public class Game extends Canvas implements Runnable {
 		screen = new Screen(width, height);
 		frame = new JFrame();
 		key = new Keyboard();
-		level = new RandomLevel(64, 64);
+		level = new SpawnLevel("/textures/level.png");
 		player = new Player(key);
 
 		addKeyListener(key);

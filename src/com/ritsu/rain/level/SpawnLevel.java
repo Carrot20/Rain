@@ -5,12 +5,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import com.ritsu.rain.level.tile.GrassTile;
 import com.ritsu.rain.level.tile.Tile;
 
 public class SpawnLevel extends Level {
 
-	private Tile[] tiles;
 	private int[] levelPixels;
 
 	public SpawnLevel(String path) {
