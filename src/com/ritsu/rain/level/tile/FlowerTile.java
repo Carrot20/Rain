@@ -3,9 +3,9 @@ package com.ritsu.rain.level.tile;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.graphics.Sprite;
 
-public class GrassTile extends Tile {
+public class FlowerTile extends Tile {
 
-	public GrassTile(Sprite sprite) {
+	public FlowerTile(Sprite sprite) {
 		super(sprite);
 	}
 
