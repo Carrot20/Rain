@@ -11,19 +11,19 @@ public abstract class Entity {
 	private boolean removed = false;
 	protected Level level;
 	protected final Random random = new Random();
-	
-	public void update(){
+
+	public void update() {
 	}
-	
-	public void render(Screen screen){
+
+	public void render(Screen screen) {
 	}
-	
-	public void remove(){
+
+	public void remove() {
 		//Remove from level
-		removed=true;
+		removed = true;
 	}
-	
-	public boolean isRemoved(){
+
+	public boolean isRemoved() {
 		return removed;
 	}
 

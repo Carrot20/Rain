@@ -1,5 +1,7 @@
 package com.ritsu.rain.entity.mob;
 
+import com.ritsu.rain.graphics.Screen;
+import com.ritsu.rain.graphics.Sprite;
 import com.ritsu.rain.input.Keyboard;
 
 public class Player extends Mob {
@@ -27,7 +29,8 @@ public class Player extends Mob {
 
 	}
 
-	public void render() {
+	public void render(Screen screen) {
+		screen.renderPlayer(x, y, Sprite.player0);
 	}
 
 }
