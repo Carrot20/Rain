@@ -23,7 +23,7 @@ public class Game extends Canvas implements Runnable {
 	public static int width = 300;
 	public static int height = width / 16 * 9;
 	public static int scale = 3;
-	public static String title = "Rain";
+	public static String title = "Rain Pre-Alpha 0.01";
 
 	private Thread thread;
 	private JFrame frame;
