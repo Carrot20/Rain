@@ -46,7 +46,7 @@ public class Level {
 			}
 		}
 	}
-	
+
 	// Grass = 0xFF00FF00
 	// Flower = 0xFFFFFF00
 	// Rock = 0xFF7F7F00
