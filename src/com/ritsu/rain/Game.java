@@ -15,7 +15,7 @@ import com.ritsu.rain.entity.mob.Player;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.input.Keyboard;
 import com.ritsu.rain.level.Level;
-import com.ritsu.rain.level.SpawnLevel;
+import com.ritsu.rain.level.TileCoordinate;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -45,8 +45,8 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		key = new Keyboard();
 		level = Level.spawn;
-		player = new Player(6 * 16, 4 * 16, key);
-
+		TileCoordinate playerSpawn = new TileCoordinate(19, 62);
+		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
 		addKeyListener(key);
 	}
 
