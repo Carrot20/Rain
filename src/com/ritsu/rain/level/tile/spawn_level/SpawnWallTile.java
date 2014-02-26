@@ -18,8 +18,4 @@ public class SpawnWallTile extends Tile {
 		return true;
 	}
 
-	public boolean breakable() {
-		return true;
-	}
-
 }
