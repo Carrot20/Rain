@@ -1,6 +1,7 @@
 package com.ritsu.rain.entity.mob;
 
 import com.ritsu.rain.Game;
+import com.ritsu.rain.entity.projectile.Projectile;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.graphics.Sprite;
 import com.ritsu.rain.input.Keyboard;
@@ -43,9 +44,16 @@ public class Player extends Mob {
 		} else {
 			walking = false;
 		}
-
+		clear();
 		updateShooting();
 
+	}
+
+	private void clear() {
+		for (int i = 0; i < projectiles.size(); i++) {
+			Projectile p = projectiles.get(i);
+			if (p.isRemoved()) projectiles.remove(i);
+		}
 	}
 
 	private void updateShooting() {
