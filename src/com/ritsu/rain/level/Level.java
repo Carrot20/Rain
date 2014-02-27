@@ -1,5 +1,9 @@
 package com.ritsu.rain.level;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ritsu.rain.entity.Entity;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.level.tile.Tile;
 
@@ -8,6 +12,8 @@ public class Level {
 	protected int width, height;
 	protected int[] tilesInt;
 	protected int[] tiles;
+
+	private List<Entity> entities = new ArrayList<Entity>();
 
 	public static Level spawn = new SpawnLevel("/levels/spawn.png");
 
@@ -30,6 +36,9 @@ public class Level {
 	}
 
 	public void update() {
+		for (int i = 0; i < entities.size(); i++) {
+			entities.get(i).update();
+		}
 	}
 
 	private void time() {
@@ -41,12 +50,18 @@ public class Level {
 		int x1 = (xScroll + screen.width + 16) >> 4;
 		int y0 = yScroll >> 4;
 		int y1 = (yScroll + screen.height + 16) >> 4;
-
 		for (int y = y0; y < y1; y++) {
 			for (int x = x0; x < x1; x++) {
 				getTile(x, y).render(x, y, screen);
 			}
 		}
+		for (int i = 0; i < entities.size(); i++) {
+			entities.get(i).render(screen);
+		}
+	}
+
+	public void add(Entity e) {
+		entities.add(e);
 	}
 
 	// Grass = 0xFF00FF00
