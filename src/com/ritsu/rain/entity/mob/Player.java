@@ -1,8 +1,10 @@
 package com.ritsu.rain.entity.mob;
 
+import com.ritsu.rain.Game;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.graphics.Sprite;
 import com.ritsu.rain.input.Keyboard;
+import com.ritsu.rain.input.Mouse;
 
 public class Player extends Mob {
 
@@ -42,6 +44,17 @@ public class Player extends Mob {
 			walking = false;
 		}
 
+		updateShooting();
+
+	}
+
+	private void updateShooting() {
+		if (Mouse.getButton() == 1) {
+			double dx = Mouse.getX() - (Game.width / 2);
+			double dy = Mouse.getY() - (Game.height / 2);
+			double dir = Math.atan2(dy, dx);
+			shoot(x, y, dir);
+		}
 	}
 
 	public void render(Screen screen) {
