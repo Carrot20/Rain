@@ -23,7 +23,7 @@ public class Player extends Mob {
 		this.x = x;
 		this.y = y;
 		this.input = input;
-		sprite = Sprite.player_back;
+		sprite = Sprite.player_forward;
 	}
 
 	public void update() {
