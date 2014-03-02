@@ -5,12 +5,13 @@ import com.ritsu.rain.graphics.Sprite;
 
 public class WizardProjectile extends Projectile {
 
+	public static final int FIRE_RATE = 10; // Higer is slower!
+
 	public WizardProjectile(int x, int y, double dir) {
 		super(x, y, dir);
-		range = 0;
-		speed = 2;
+		range = 200;
+		speed = 4;
 		damage = 20;
-		rateOfFire = 15;
 		sprite = Sprite.projectile_wizard;
 		nx = speed * Math.cos(angle);
 		ny = speed * Math.sin(angle);
@@ -29,7 +30,7 @@ public class WizardProjectile extends Projectile {
 	private double distance() {
 		double dist = 0;
 		dist = Math.sqrt(Math.abs((xOrigin - x) * (xOrigin - x) + (yOrigin - y) * (yOrigin - y)));
-		return 0;
+		return dist;
 	}
 
 	public void render(Screen screen) {

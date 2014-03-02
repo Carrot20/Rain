@@ -1,8 +1,5 @@
 package com.ritsu.rain.entity.mob;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.ritsu.rain.entity.Entity;
 import com.ritsu.rain.entity.projectile.Projectile;
 import com.ritsu.rain.entity.projectile.WizardProjectile;
@@ -13,8 +10,6 @@ public abstract class Mob extends Entity {
 	protected Sprite sprite;
 	protected int dir = 0;
 	protected boolean moving = false;
-
-	protected List<Projectile> projectiles = new ArrayList<Projectile>();
 
 	public void move(int xa, int ya) {
 		if (xa != 0 && ya != 0) {
@@ -40,8 +35,7 @@ public abstract class Mob extends Entity {
 	protected void shoot(int x, int y, double dir) {
 		//dir *= 180 / Math.PI;
 		Projectile p = new WizardProjectile(x, y, dir);
-		projectiles.add(p);
-		level.add(p);
+		level.addProjectile(p);
 	}
 
 	private boolean collision(int xa, int ya) {

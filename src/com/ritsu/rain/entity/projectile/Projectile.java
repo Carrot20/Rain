@@ -1,5 +1,7 @@
 package com.ritsu.rain.entity.projectile;
 
+import java.util.Random;
+
 import com.ritsu.rain.entity.Entity;
 import com.ritsu.rain.graphics.Sprite;
 
@@ -11,7 +13,9 @@ public abstract class Projectile extends Entity {
 	protected double x, y;
 	protected double nx, ny;
 	protected double distance;
-	protected double speed, rateOfFire, range, damage;
+	protected double speed, range, damage;
+	
+	protected final Random random = new Random();
 
 	public Projectile(int x, int y, double dir) {
 		xOrigin = x;
