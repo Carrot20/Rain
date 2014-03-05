@@ -1,15 +1,11 @@
 package com.ritsu.rain.entity.particle;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.ritsu.rain.entity.Entity;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.graphics.Sprite;
 
 public class Particle extends Entity {
 
-	private List<Particle> particles = new ArrayList<Particle>();
 	private Sprite sprite;
 
 	private int life;
