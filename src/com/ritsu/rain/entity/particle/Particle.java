@@ -13,6 +13,7 @@ public class Particle extends Entity {
 	private Sprite sprite;
 
 	private int life;
+	private int time = 0;
 
 	protected double xx, yy, xa, ya;
 
@@ -21,7 +22,7 @@ public class Particle extends Entity {
 		this.y = y;
 		this.xx = x;
 		this.yy = y;
-		this.life = life;
+		this.life = life + (random.nextInt(20) - 10);
 		sprite = Sprite.particle_normal;
 
 		this.xa = random.nextGaussian();
@@ -30,6 +31,9 @@ public class Particle extends Entity {
 	}
 
 	public void update() {
+		time++;
+		if (time >= 7400) time = 0;
+		if (time > life) remove();
 		this.xx += xa;
 		this.yy += ya;
 	}

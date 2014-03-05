@@ -6,7 +6,6 @@ import java.util.List;
 import com.ritsu.rain.entity.Entity;
 import com.ritsu.rain.entity.particle.Particle;
 import com.ritsu.rain.entity.projectile.Projectile;
-import com.ritsu.rain.entity.spawner.Spawner;
 import com.ritsu.rain.graphics.Screen;
 import com.ritsu.rain.level.tile.Tile;
 
@@ -32,8 +31,6 @@ public class Level {
 	public Level(String path) {
 		loadLevel(path);
 		generateLevel();
-
-		add(new Spawner(16 * 16, 62 * 16, Spawner.Type.PARTICLE, 500,this));
 	}
 
 	protected void generateLevel() {
@@ -51,6 +48,19 @@ public class Level {
 		}
 		for (int i = 0; i < particles.size(); i++) {
 			particles.get(i).update();
+		}
+		remove();
+	}
+
+	private void remove() {
+		for (int i = 0; i < entities.size(); i++) {
+			if (entities.get(i).isRemoved()) entities.remove(i);
+		}
+		for (int i = 0; i < projectiles.size(); i++) {
+			if (projectiles.get(i).isRemoved()) projectiles.remove(i);
+		}
+		for (int i = 0; i < particles.size(); i++) {
+			if (particles.get(i).isRemoved()) particles.remove(i);
 		}
 	}
 
