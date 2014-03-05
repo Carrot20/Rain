@@ -1,7 +1,6 @@
 package com.ritsu.rain.entity.mob;
 
 import com.ritsu.rain.entity.Entity;
-import com.ritsu.rain.entity.particle.Particle;
 import com.ritsu.rain.entity.projectile.Projectile;
 import com.ritsu.rain.entity.projectile.WizardProjectile;
 import com.ritsu.rain.graphics.Sprite;
@@ -36,7 +35,7 @@ public abstract class Mob extends Entity {
 	protected void shoot(int x, int y, double dir) {
 		//dir *= 180 / Math.PI;
 		Projectile p = new WizardProjectile(x, y, dir);
-		level.addProjectile(p);
+		level.add(p);
 	}
 
 	private boolean collision(int xa, int ya) {

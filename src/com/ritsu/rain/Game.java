@@ -8,13 +8,11 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.util.Random;
 
 import javax.swing.JFrame;
 
 import com.ritsu.rain.entity.mob.Player;
 import com.ritsu.rain.graphics.Screen;
-import com.ritsu.rain.graphics.Sprite;
 import com.ritsu.rain.input.Keyboard;
 import com.ritsu.rain.input.Mouse;
 import com.ritsu.rain.level.Level;
