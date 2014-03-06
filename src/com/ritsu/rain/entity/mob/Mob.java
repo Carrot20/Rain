@@ -1,6 +1,7 @@
 package com.ritsu.rain.entity.mob;
 
 import com.ritsu.rain.entity.Entity;
+import com.ritsu.rain.entity.particle.Particle;
 import com.ritsu.rain.entity.projectile.Projectile;
 import com.ritsu.rain.entity.projectile.WizardProjectile;
 import com.ritsu.rain.graphics.Sprite;
